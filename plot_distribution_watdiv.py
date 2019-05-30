@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import argparse
+import math
 dataset_name="watdiv100M"
 data_path="watdiv100M.txt"
 
