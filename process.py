@@ -51,7 +51,7 @@ plt.plot(deg_list,cnt_list,'.')
 plt.xlabel("degree")
 plt.ylabel("count")
 plt.title(dataset_name+" dataset")
-plt.savefig("distribution_"+dataset_name+".jpg")
+plt.savefig("distribution_"+dataset_name+".png")
 plt.show()
 
 
