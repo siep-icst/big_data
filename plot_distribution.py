@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import argparse
+import math
 dataset_name="watdiv100M"
 data_path="watdiv100M.txt"
 
@@ -48,11 +49,13 @@ deg_list.sort(reverse=True)
 cnt_list=[]
 for tmp_deg in deg_list:
     cnt_list.append(degree2cnt[tmp_deg])
+deg_list=math.log(deg_list)
+cnt_list=math.log(cnt_list)
 plt.plot(deg_list,cnt_list,'.')
 plt.xlabel("degree")
 plt.ylabel("count")
 plt.title(dataset_name+" dataset")
-plt.savefig("distribution_"+dataset_name+".png")
+plt.savefig("distribution_"+dataset_name+"_log.png")
 plt.show()
 
 
