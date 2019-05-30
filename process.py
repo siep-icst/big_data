@@ -9,7 +9,7 @@ with open(data_path,'r') as edge_file:
         if not tmp_line_raw:
             break
         tmp_line=tmp_line_raw.strip().split()
-        line_len=len(tmp_edge)
+        line_len=len(tmp_line)
         if(line_len<1):
             break
         if(tmp_line[0]!='e'):
