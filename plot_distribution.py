@@ -49,13 +49,19 @@ deg_list.sort(reverse=True)
 cnt_list=[]
 for tmp_deg in deg_list:
     cnt_list.append(degree2cnt[tmp_deg])
-deg_list=math.log(deg_list)
-cnt_list=math.log(cnt_list)
-plt.plot(deg_list,cnt_list,'.')
+list_len=len(deg_list)
+log_deg_list=[]
+log_cnt_list=[]
+for i in range(list_len):
+    log_deg_list.append(math.log(deg_list[i]))
+for i in range(list_len):
+    log_cnt_list.append(math.log(cnt_list[i]))
+
+plt.plot(log_deg_list,log_cnt_list,'.')
 plt.xlabel("degree")
 plt.ylabel("count")
 plt.title(dataset_name+" dataset")
-plt.savefig("distribution_"+dataset_name+"_log.png")
+plt.savefig("log_distribution_"+dataset_name+".png")
 plt.show()
 
 
