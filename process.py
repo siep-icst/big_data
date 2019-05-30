@@ -1,16 +1,21 @@
 import matplotlib.pyplot as plt
-dataset_name="email_eu"
-edge_path="email-Eu-core.txt"
+dataset_name="rmat100M"
+data_path="rmat100M.txt"
 
 degree_map={}
-with open(edge_path,'r') as edge_file:
+with open(data_path,'r') as edge_file:
     while True:
-        tmp_line=edge_file.readline()
-        if not tmp_line:
+        tmp_line_raw=edge_file.readline()
+        if not tmp_line_raw:
             break
-        tmp_edge=tmp_line.strip().split()
-        vertex0=tmp_edge[0]
-        vertex1=tmp_edge[1]
+        tmp_line=tmp_line_raw.strip().split()
+        line_len=len(tmp_edge)
+        if(line_len<1):
+            break
+        if(tmp_line[0]!='e'):
+            continue
+        vertex0=int(tmp_line[1])
+        vertex1=int(tmp_line[2])
         if vertex0 in degree_map:
             degree_map[vertex0]+=1
         else:
