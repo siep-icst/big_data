@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-dataset_name="rmat100M"
-data_path="rmat100M.txt"
+dataset_name="yeast"
+data_path="yeast_2.txt"
 
 degree_map={}
 with open(data_path,'r') as edge_file:
